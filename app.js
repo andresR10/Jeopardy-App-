@@ -10,7 +10,7 @@ async function getCategoryIds() {
 
 let idArr = [];
 
-let response = await axios.get(`http://jservice.io/api/categories?count=100`);
+let response = await axios.get(`https://jservice.io/api/categories?count=100`);
 
 let ids = response.data.map(id => ({
     id: id.id
@@ -53,7 +53,7 @@ return idArr;
 
 async function getCategory(catIds) {
     for(let i = 0; i < 6; i++){
-        let response = await axios.get(`http://jservice.io/api/category?id=${catIds[i]}`);
+        let response = await axios.get(`https://jservice.io/api/category?id=${catIds[i]}`);
 
         categories.push(response.data); 
 }
